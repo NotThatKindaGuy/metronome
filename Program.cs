@@ -1,4 +1,4 @@
-﻿Console.Write("Tempo: ");
+Console.Write("Tempo: ");
 var tempo = Console.ReadLine();
 int tempoInt = int.Parse(tempo);
 tempoInt = 60 / tempoInt;
@@ -8,5 +8,21 @@ while (true)
 {
     //use the tempo to wait
     System.Threading.Thread.Sleep(tempoInt);
-    Console.Beep(1000, 100);
+    if (tic != 0)
+    {
+        Console.Beep(500, 100);
+        if (tic == 3)
+        {
+            tic = 0;
+        }
+        else
+        {
+            tic++;
+        }
+    }
+    else
+    {
+        Console.Beep(1000, 100);
+        tic++;
+    }
 }
